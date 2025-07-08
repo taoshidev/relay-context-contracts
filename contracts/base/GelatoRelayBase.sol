@@ -10,6 +10,10 @@ abstract contract GelatoRelayBase {
     }
 
     constructor(address __gelatoRelay) {
+        require(
+            __gelatoRelay != address(0),
+            "GelatoRelayBase: GelatoRelay cannot be zero address"
+        );
         _gelatoRelay = __gelatoRelay;
     }
 

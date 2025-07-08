@@ -14,6 +14,14 @@ abstract contract GelatoRelayERC2771Base {
         address __gelatoRelayERC2771,
         address __gelatoRelayConcurrentERC2771
     ) {
+        require(
+            __gelatoRelayERC2771 != address(0),
+            "GelatoRelayERC2771Base: GelatoRelayERC2771 cannot be zero address"
+        );
+        require(
+            __gelatoRelayConcurrentERC2771 != address(0),
+            "GelatoRelayERC2771Base: GelatoRelayConcurrentERC2771 cannot be zero address"
+        );
         _gelatoRelayERC2771 = __gelatoRelayERC2771;
         _gelatoRelayConcurrentERC2771 = __gelatoRelayConcurrentERC2771;
     }
